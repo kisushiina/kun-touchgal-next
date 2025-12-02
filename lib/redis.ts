@@ -7,11 +7,7 @@ const redisUrl = process.env.REDIS_URL || 'redis://redis.railway.internal:6379';
 // 注意：如果您的 REDIS_URL 是完整的 URL 格式，ioredis 应该能自动处理。
 // 但如果需要强制使用 IPv6，您可以尝试以下配置：
 
-const redisInstance = new Redis(redisUrl, {
-    // 明确要求使用 IPv6
-    family: 6, 
-    // ... 其他配置 ...
-});
+const redisInstance = new Redis(redisUrl);
 export const setKv = async (key: string, value: string, time?: number) => {
   const keyString = `${KUN_PATCH_REDIS_PREFIX}:${key}`
   if (time) {
