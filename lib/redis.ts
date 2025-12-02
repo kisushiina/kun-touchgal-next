@@ -4,6 +4,7 @@ const KUN_PATCH_REDIS_PREFIX = 'kun:touchgal'
 
 export const redis = new Redis({
   port: parseInt(process.env.REDIS_PORT!),
+  family: 6,
   host: process.env.REDIS_HOST
 })
 
