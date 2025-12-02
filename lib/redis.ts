@@ -2,7 +2,7 @@ import Redis from 'ioredis'
 
 const KUN_PATCH_REDIS_PREFIX = 'kun:touchgal'
 
-export const redis = new Redis(process.env.REDIS_URL!);
+export const redis = new Redis(process.env.REDIS_HOST!);
 
 export const setKv = async (key: string, value: string, time?: number) => {
   const keyString = `${KUN_PATCH_REDIS_PREFIX}:${key}`
